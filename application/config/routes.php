@@ -55,6 +55,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['show/(:num)'] = 'first/gimme/$1';
 $route['lock/(:any)/(:any)'] = 'welcome/shucks';
+$route['([a-zA-Z]{4})/bingo'] = 'bingo';
+$route['comp([0-9]{4})/(:any)'] = 'wise/bingo';
 
 $route['dunno'] = function() {
 	$imagesDir = './data/';
