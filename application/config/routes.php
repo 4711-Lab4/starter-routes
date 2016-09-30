@@ -58,3 +58,14 @@ $route['lock/(:any)/(:any)'] = 'welcome/shucks';
 $route['([a-zA-Z]{4})/bingo'] = 'bingo';
 $route['comp([0-9]{4})/(:any)'] = 'wise/bingo';
 
+$route['dunno'] = function() {
+	$imagesDir = './data/';
+	$images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+	$randomImage = $images[array_rand($images)];
+
+	$source = './data/surprise.jpg'; 
+	header("Content-type: image/jpeg"); 
+	header('Content-Disposition: inline');
+	readfile($randomImage); 
+	die(); 
+};
