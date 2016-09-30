@@ -15,19 +15,12 @@ class First extends Application
 	 */
 	public function index()
 	{
-		// this is the view we want shown
-		$this->data['pagebody'] = 'homepage';
-
-		// build the list of authors, to pass on to our view
-		$source = $this->quotes->all();
-		$authors = array ();
-		foreach ($source as $record)
-		{
-			$authors[] = array ('who' => $record['who'], 'mug' => $record['mug'], 'href' => $record['where']);
-		}
-		$this->data['authors'] = $authors;
-
-		$this->render();
+		$this->data['pagebody'] = 'justone';
+            
+        $record = $this->quotes->get(1);
+        $this->data = array_merge($this->data, $record);
+            
+        $this->render();
 	}
 
 	public function gimme($id)
