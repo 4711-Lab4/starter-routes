@@ -59,6 +59,7 @@ $route['([a-zA-Z]{4})/bingo'] = 'bingo';
 $route['comp([0-9]{4})/(:any)'] = 'wise/bingo';
 $route['last/Welcome'] = 'index';
 
+
 $route['dunno'] = function() {
 	$imagesDir = './data/';
 	$images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
@@ -70,3 +71,4 @@ $route['dunno'] = function() {
 	readfile($randomImage); 
 	die(); 
 };
+$route['s+(:any)'] = 'first/zzz';
