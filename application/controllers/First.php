@@ -32,6 +32,10 @@ class First extends Application
             $this->render();
         }
 
+	/**
+	 * Parameter $id is the index of the quote to be retrieved
+	 * from the quotes array. 
+	 */
 	public function gimme($id)
 	{
 	    $this->data['pagebody'] = 'justone';
